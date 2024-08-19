@@ -1,0 +1,105 @@
+ 
+ .login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A0D2EB;
+
+ }
+ .login-main{
+    width: 30%;
+    /* height: 200px; */
+    padding: 20px;
+    background-color:white;
+    border-radius: 8px;
+    box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.5);
+    
+
+ }
+ .login-header{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+ }
+ .login-form-input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;  
+ }
+ .login-form-input label{
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
+
+ }
+ .login-form-input input{
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    height: 30px;
+    padding: 4px;
+    background-color: #f8f8f7;
+ }
+ .loginbutton{
+    font-size: 25px;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    border-radius: 6px;
+    height: 38px;
+    transition: .2s ease;
+    margin-top: 30px;
+
+ }
+ .loginbutton:hover{
+    background-color: #0056b3;
+    cursor: pointer;
+ }
+ .account-not-exit{
+
+ color: blue;
+  
+ margin-top: 4px;
+ margin-bottom: 20px;
+
+ }
+ .account-not-exit small{
+   text-decoration: underline;
+   font-size: 16px;
+   cursor: pointer;
+ }
+
+
+@media screen and (max-width:800px) {
+   .login-main{
+       width: 40%;
+       
+        
+   }
+   
+}
+@media screen and (max-width:600px) {
+   .login-main{
+       width: 60%;
+       
+        
+   }
+   
+}
+@media screen and (max-width:500px) {
+   .login-main{
+       width: 78%;
+       
+        
+   }
+   
+}

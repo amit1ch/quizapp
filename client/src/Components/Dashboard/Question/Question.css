@@ -1,0 +1,47 @@
+.form-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A0D2EB;
+}
+.form-wrapper form{
+    width: 80%;
+    height: 80%;
+    overflow-y: scroll;
+    padding: 20px;
+    border-radius: 5px;
+    background-color:#1A1A2E;
+    color: white;
+}
+.question-header{
+    margin-bottom: 6px;
+}
+.question-option{
+    margin: 2px;
+}
+.question-option input{
+    margin-right: 8px;
+}
+.answersubmit{
+    padding: 8px;
+    background-color: #A0D2EB;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 8px;
+    transition: .3s ease-in-out;
+
+}
+.answersubmit:hover{
+    scale: 1.1;
+    background-color: aliceblue;
+}
+ 
+
+@media screen and (max-width:500px) {
+    .form-wrapper form {
+       
+        padding: 4px;
+        
+    }
+}

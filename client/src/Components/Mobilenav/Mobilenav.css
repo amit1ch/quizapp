@@ -1,0 +1,26 @@
+
+.mobile-nav-icon{
+    position: absolute;
+    top:5px;
+    right: 10px;
+    font-weight: 700;
+    z-index:200;
+}
+.mobile-side-icon {
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    color: black;
+    font-weight: 800;
+    list-style: none;
+     gap: 10px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+    z-index: 10;
+    width: 100%;
+    align-items: center;
+    background: rgb(182, 181, 181);
+}
+ 

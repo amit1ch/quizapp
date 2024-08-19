@@ -1,0 +1,43 @@
+.dashnav{
+    height: 100%;
+    width: 20%;
+    background-color: #494d5f;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    
+}
+.dashnavtop{
+    padding-top:30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 26px;
+    font-weight: 500;
+     
+}
+.nav-icon{
+    display: none;
+}
+ .logout{
+     
+margin-bottom: 30px;
+font-size: 30px;
+cursor: pointer;
+
+}
+
+ @media screen and (max-width:900px) {
+    .dashnav{
+        width: 30%;
+    }    
+}
+
+@media screen and (max-width:500px) {
+    .dashnav{
+        display: none;
+    }
+}

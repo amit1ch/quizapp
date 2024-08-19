@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+   }
+   .container{
+    height: 100vh;
+     
+   }
+   .header-quiz{
+    color: white;
+   }
+   .firtnavbar{
+    /* width: 100%; */
+    height: 10%;
+    display: flex;
+    /* padding: 10px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #494d5f;
+   }
+   .firtnavbar button{
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+   }
+   .main{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    background-color: #A0D2EB;
+   }
+   .main-content{
+      border-radius: 20px;
+    margin: 20px;
+    width: 40%;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color:#494d5f;
+  
+   }
+   .startgame{
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+   }
+   .footer{
+    height: 20%;
+    background-color: #494d5f;
+   }
+  
+   @media screen and (max-width:850px) {
+    .main-content{
+      width: 60%;
+    }
+   }
+   @media screen and (max-width:500px) {
+    .main-content{
+      width: 80%;
+    }
+   }
+   @media screen and (max-width:400px) {
+    .firtnavbar{
+      padding: 3px;
+    }
+    .firtnavbar button{
+      margin: 4px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    
+   }
+    

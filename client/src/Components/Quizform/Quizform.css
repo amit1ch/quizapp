@@ -1,0 +1,111 @@
+.quizform{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .quizform div {
+    margin-bottom: 20px;
+  }
+  
+  .quizform label{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .quizform input{
+    padding: 8px;
+    width: 96%;
+    border-radius: 10px;
+    margin-bottom: 8px;
+
+  }
+  
+  .quizform input[type="text"],
+ .quizform input[type="number"],
+  .quizform input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  .quizform input[type="text"]:focus,
+  .quizform input[type="number"]:focus,
+  .quizform input[type="email"]:focus,
+  textarea:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .quizform button[type="button"],
+  .quizform button[type="submit"] {
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .quizform button[type="button"]:hover,
+  .quizform button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+ .quizform p {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+ .quizform div > div {
+    margin-bottom: 10px;
+  }
+  
+  
+  .quizform div:last-of-type {
+    margin-bottom: 30px;
+  }
+  
+  .quizform > div > button[type="button"] {
+    margin-top: 5px;
+  }
+  
+  .quizform > div > button[type="button"] {
+    background-color: #28a745;
+  }
+  
+  .quizform > div > button[type="button"]:hover {
+    background-color: #218838;
+  }
+  
+  .quizform > div > div > button[type="button"] {
+    background-color: #ffc107;
+    color: #333;
+  }
+  
+  .quizform > div > div > button[type="button"]:hover {
+    background-color: #e0a800;
+  }
+  
+  .quizform > div > button[type="submit"] {
+    background-color: #17a2b8;
+  }
+  
+  .quizform > div > button[type="submit"]:hover {
+    background-color: #138496;
+  }
+  
