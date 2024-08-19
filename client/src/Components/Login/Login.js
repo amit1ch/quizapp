@@ -14,7 +14,7 @@ export default function Login(){
     const mainpage = async(e) => {
         e.preventDefault();  
         
-        const response = await axios.post("http://localhost:3000/api/v1/user/login",formdata,{withCredentials:true})
+        const response = await axios.post("https://quiz-application-32b5.onrender.com/api/v1/user/login",formdata,{withCredentials:true})
       
        if(response.status===200){
          login(response?.data.user);

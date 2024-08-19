@@ -11,7 +11,7 @@ export default function Questions({ questions = [] ,quizId }) {
          console.log('Selected Answers:',data);
        const answer = Object.values(data); 
         console.log("answer",answer);
-        const response = await axios.post("http://localhost:3000/api/v1/quiz/check-quiz",{answer,quizId},{withCredentials:true})
+        const response = await axios.post("https://quiz-application-32b5.onrender.com/api/v1/quiz/check-quiz",{answer,quizId},{withCredentials:true})
         console.log(response)
         navigate('/dashboard');
         

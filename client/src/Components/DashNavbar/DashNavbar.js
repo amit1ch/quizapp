@@ -17,7 +17,7 @@ import { useAuthContext } from '../AuthContext/AuthContext';
     }
     const logoutUser = async()=>{
          
-        const response = await axios.get("http://localhost:3000/api/v1/user/logout",{withCredentials:true});
+        const response = await axios.get("https://quiz-application-32b5.onrender.com/api/v1/user/logout",{withCredentials:true});
 
         if(response?.data?.statusCode===203){
             logout()
@@ -28,8 +28,7 @@ import { useAuthContext } from '../AuthContext/AuthContext';
     useEffect(()=>{
         async function getUserdetail(){
             console.log("hello");
-            const response = await axios.get("http://localhost:3000/api/v1/user/profile",{withCredentials:true});
-            console.log("quiz wla",response);
+            const response = await axios.get("https://quiz-application-32b5.onrender.com/api/v1/user/profile",{withCredentials:true});
             console.log(response?.data?.role);
             setUserRole(response?.data?.role);
         }

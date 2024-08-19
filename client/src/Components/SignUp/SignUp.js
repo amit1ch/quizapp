@@ -11,7 +11,7 @@ export default function SignUp() {
     const mainpage = async (e) => {
        try{ e.preventDefault();
 
-        const response = await axios.post("http://localhost:3000/api/v1/user/register",formdata)
+        const response = await axios.post("https://quiz-application-32b5.onrender.com/api/v1/user/register",formdata)
       console.log(response.data);
       if(response.status===201){
         navigate("/dashboard")

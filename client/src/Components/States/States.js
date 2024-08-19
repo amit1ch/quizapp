@@ -10,7 +10,7 @@ export default function States (){
      useEffect(()=>{
         async function getUserdetail(){
 
-            const response = await axios.get("http://localhost:3000/api/v1/user/profile",{withCredentials:true});
+            const response = await axios.get("https://quiz-application-32b5.onrender.com/api/v1/user/profile",{withCredentials:true});
 
             const data = response.data;
 
