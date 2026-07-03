@@ -17,6 +17,7 @@
     localStorage.setItem('user', JSON.stringify(userData));
     setUser(userData);
   };
+  
 
   const logout = () => {
     localStorage.removeItem('user');
