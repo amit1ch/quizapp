@@ -10,25 +10,40 @@ import { useAuthContext } from '../AuthContext/AuthContext';
  
     const navigate = useNavigate();
     const showstate=()=>{
+        console.log("kuch noahi")
         navigate('/stats');
     }
     const showhome =()=>{
         navigate('/dashboard');
     }
     const logoutUser = async()=>{
-         
-        const response = await axios.get("https://quiz-application-32b5.onrender.com/api/v1/user/logout",{withCredentials:true});
 
-        if(response?.data?.statusCode===203){
-            logout()
-            navigate('/login');
-        }
+ 
+            try {
+                console.log("Logging out user...");
+              const response = await axios.get("http://localhost:3000/api/v1/user/logout", {
+                withCredentials: true,
+              });
+              console.log(response.data);
+              console.log("User logged out successfully");
+              logout();        // Clears localStorage and React state
+              navigate("/login");
+            } catch (error) {
+              console.error("Logout error:", error.response?.data?.message || error.message);
+            }
+         
+        // const response = await axios.get("http://localhost:3000/api/v1/user/logout",{withCredentials:true});
+
+        // if(response?.data?.statusCode===203){
+        //     logout()
+        //     navigate('/login');
+        // }
        
     }
     useEffect(()=>{
         async function getUserdetail(){
             console.log("hello");
-            const response = await axios.get("https://quiz-application-32b5.onrender.com/api/v1/user/profile",{withCredentials:true});
+            const response = await axios.get("http://localhost:3000/api/v1/user/profile",{withCredentials:true});
             console.log(response?.data?.role);
             setUserRole(response?.data?.role);
         }
@@ -36,6 +51,7 @@ import { useAuthContext } from '../AuthContext/AuthContext';
     },[])
         
     const createquiz=()=>{
+
         console.log(userRole);
      if(userRole==="admin"){
         navigate("/create-quiz-form");
@@ -46,6 +62,15 @@ import { useAuthContext } from '../AuthContext/AuthContext';
         
     }
 
+    const createaiquiz=()=>{
+        console.log(userRole);
+     if(userRole==="admin"){
+        navigate("/create-ai-quiz-form");
+     }else{
+        alert("You does't have access to create quiz");
+     }
+   
+    }
     return (
         <>
             <div className="dashnav">
@@ -57,7 +82,10 @@ import { useAuthContext } from '../AuthContext/AuthContext';
                 
                     <div className='state' style={{ cursor: 'pointer',display:'flex',justifyContent:'flex-start',alignItems:'center' }} onClick={showstate} >Stats</div>
                     <div className='create-quiz' style={{ cursor: 'pointer',display:'flex',justifyContent:'flex-start',alignItems:'center' }} onClick = {createquiz}>Create Quiz</div>
+                    <div className='create-ai-quiz' style={{ cursor: 'pointer',display:'flex',justifyContent:'flex-start',alignItems:'center' }} onClick = {createaiquiz}>Create ai Quiz</div>
+ 
                 </div>
+
                 <div className='logout'   onClick ={logoutUser}>Logout</div>
             </div>
         </>

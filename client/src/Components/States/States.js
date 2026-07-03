@@ -9,8 +9,8 @@ export default function States (){
     const [maxScore,setMaxScore] = useState(0);
      useEffect(()=>{
         async function getUserdetail(){
-
-            const response = await axios.get("https://quiz-application-32b5.onrender.com/api/v1/user/profile",{withCredentials:true});
+            console.log("hello");
+            const response = await axios.get("http://localhost:3000/api/v1/user/profile",{withCredentials:true});
 
             const data = response.data;
 
@@ -52,6 +52,7 @@ export default function States (){
     },[])
         
     
+
 
 
     return (

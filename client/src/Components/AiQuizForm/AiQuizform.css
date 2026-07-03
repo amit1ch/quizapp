@@ -1,0 +1,123 @@
+/* Container styling */
+.quizform {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fefefe;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Spacing between fields */
+  .quizform div {
+    margin-bottom: 20px;
+  }
+  
+  /* Labels */
+  .quizform label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  /* Inputs & Textareas */
+  .quizform input[type="text"],
+  .quizform input[type="number"],
+  .quizform input[type="email"],
+  .quizform textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+  }
+  
+  /* Focus state */
+  .quizform input:focus,
+  .quizform textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  }
+  
+  /* Buttons */
+  .quizform button[type="button"],
+  .quizform button[type="submit"] {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Specific buttons */
+  .quizform button.generate-btn {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .quizform button.generate-btn:hover {
+    background-color: #218838;
+  }
+  
+  .quizform button.add-btn {
+    background-color: #ffc107;
+    color: #333;
+  }
+  
+  .quizform button.add-btn:hover {
+    background-color: #e0a800;
+  }
+  
+  .quizform button.submit-btn {
+    background-color: #17a2b8;
+    color: #fff;
+  }
+  
+  .quizform button.submit-btn:hover {
+    background-color: #138496;
+  }
+  
+  /* Error messages */
+  .quizform p {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  
+  /* Questions section */
+  .quizform .question-block {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+  }
+  
+  /* Answer options */
+  .quizform .answer-options div {
+    margin-bottom: 8px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 650px) {
+    .quizform {
+      padding: 15px;
+    }
+  
+    .quizform label {
+      font-size: 18px;
+    }
+  
+    .quizform button {
+      width: 100%;
+    }
+  }
+  

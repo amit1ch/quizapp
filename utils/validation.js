@@ -18,35 +18,40 @@ const loginUserSchema = z.object({
 }
 )
 
-const CreateQuizSchema =  z.object({
-  title:z.string({required_error:"This Field is required"}).min(1,"this field is required"),
 
-  description:z.string({required_error:"This Field is required"}).min(1,"this field is required"),
+const CreateQuizSchema = z.object({
+  title: z
+    .string({ required_error: "This Field is required" })
+    .min(1, "This field is required"),
 
-  tag:z.array(z.string({required_error:"This Field is required"}).min(1,"this field is required")), 
+  description: z
+    .string({ required_error: "This Field is required" })
+    .min(1, "This field is required"),
 
-  level:z.string({required_error:"This Field is required"}).min(1,"this field is required"),
+  tag: z.array(
+    z.string({ required_error: "This Field is required" })
+      .min(1, "This field is required")
+  ),
 
-  category: z.array(z.string({required_error:"This Field is required"}).min(1,"this field is required")),
+  category: z.array(
+    z.string({ required_error: "This Field is required" })
+      .min(1, "This field is required")
+  ),
 
-  questions:z.array(
+  // Questions are optional
+  questions: z.array(
     z.object({
-    
-    question : z.string({required_error:"this field is required"}),
-    
-    answerOptions : z.array(
-      z.string({required_error:"This field is required"})
-    ),
-
-    correctAnswer : z.string({required_error:"This field is required"}),
-     
-    
+      question: z.string({ required_error: "This field is required" }),
+      answerOptions: z.array(
+        z.string({ required_error: "This field is required" })
+      ),
+      correctAnswer: z.string({ required_error: "This field is required" }),
+      marks: z.number().optional()
     })
-  )
+  ).optional()
+});
 
-
-
-})
+module.exports = { CreateQuizSchema };
 
 const checkQuizSchema = z.object({
   quizId:z.string({required_error:"This field is required"}),

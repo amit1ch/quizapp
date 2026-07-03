@@ -2,60 +2,51 @@ const ApiError = require('../utils/apierror');
 const User = require('../models/user.model');
 const jwt = require('jsonwebtoken');
 
+async function authorizeUser(req, res, next) {
+  console.log("authorizeUser hit"); // <-- debug log
+  console.log("Cookies:", req.cookies); // <-- debug log
+  try {
+    // Extract token from cookie or Authorization header
+    // const token =
+    //   req.cookies?.accessToken ||
+    //   req.header("Authorization")?.replace("Bearer ", "");
 
- async function authorizeUser(req,res,next){
+      console.log("Cookies:", req.cookies);
+      const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
+      console.log("Token:", token);
 
-    try{
-
-        const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ","");
-        const payload = jwt.verify(token, process.env.JWT_SECRET) ;
-
-        if(!payload ||!payload.user_id){
-            throw new ApiError(401,"Invalid Token");
-
-        }
-
-        
-        const user  = await User.findById(payload.user_id);
-        if(!user) throw new ApiError(401,"User not found");
-
-        req.userId = user._id;
-        
-        console.log("is toke")
-
-        next();
-    
+    if (!token) {
+      return res.status(401).send({ message: "No token provided" });
     }
-    catch(error){
-        if(error instanceof ApiError){
-            res.status(401).send({message:"Unathorized user"});
-        }
-        res.status(500).send({message:"Internal Server Error"});
+
+    const payload = jwt.verify(token, process.env.JWT_SECRET);
+    if (!payload?.user_id) {
+      return res.status(401).send({ message: "Invalid token" });
     }
+
+    const user = await User.findById(payload.user_id);
+    if (!user) return res.status(401).send({ message: "User not found" });
+
+    req.userId = user._id;
+    next();
+  } catch (error) {
+    console.error("authorizeUser error:", error);
+    if (error instanceof ApiError) {
+      return res.status(401).send({ message: "Unauthorized user" });
+    }
+    return res.status(500).send({ message: "Internal Server Error" });
+  }
 }
-
 
 async function checkRole(req, res, next) {
-    console.log("role")
-    try {
-        const userId = req.userId;
-        console.log(userId);
-        const user = await User.findById(userId);
-        console.log(user);
-
-        if (user.role === 'admin') {
-            console.log("yes you can go");
-            return next();   
-        }
-
-        throw new ApiError(409, "Access Denied");
-
-    } catch (error) {
-        if (error instanceof ApiError) {
-            return res.status(409).send({ message: "Access Denied" });
-        }
-        return res.status(500).send({ message: "Internal Server Error" });
-    }
+  try {
+    const user = await User.findById(req.userId);
+    if (user?.role === 'admin') return next();
+    return res.status(403).send({ message: "Access Denied" });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send({ message: "Internal Server Error" });
+  }
 }
 
-module.exports = {authorizeUser,checkRole};
+module.exports = { authorizeUser, checkRole };

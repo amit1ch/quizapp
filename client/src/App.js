@@ -9,7 +9,7 @@ import Quiz from './Components/Quiz/Quiz';
 import Stats from './Components/States/States';
 import CreateQuiz from './Components/Quizform/Quizform';
 import Landing from './Components/Landing/Landing';
-
+import CreateAiQuiz from './Components/AiQuizForm/AiQuizform';
 import {AuthContext} from './Components/AuthContext/AuthContext';
 
 import ProtectedRoute from './Components/ProtectedRoute';
@@ -36,6 +36,7 @@ function App() {
        <Route path = "/dashnavbar" element = {<DashNavbar/>}/>
        <Route path='/stats' element = {<Stats/>}/>
        <Route path ='/create-quiz-form' element = {<CreateQuiz/>}/>
+       <Route path ='/create-ai-quiz-form' element = {<CreateAiQuiz/>}/>
     </Route>
     </Routes>
   </BrowserRouter>

@@ -2,7 +2,7 @@
 
  export const Context = createContext();
  
- const AuthContext = ({children}) => {
+  const AuthContext = ({children}) => {
 
   const [user,setUser] = useState(null);
 
