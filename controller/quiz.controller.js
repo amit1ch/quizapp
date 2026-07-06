@@ -143,8 +143,6 @@ Topic: ${prompt}`,
     const transformedQuiz = {
       title: rawQuiz.title,
       description: rawQuiz.description,
-      tag: ["AI"],          // ✅ ADD THIS
-      category: ["General"],// ✅ ADD THIS
       questions: rawQuiz.questions.map((q) => ({
         question: q.question,
         answerOptions: q.answerOptions || q.options, // handle either

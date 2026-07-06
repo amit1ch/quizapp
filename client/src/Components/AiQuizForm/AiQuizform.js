@@ -11,16 +11,16 @@ function CreateAiQuiz() {
     defaultValues: {
       title: '',
       description: '',
-      tag: [''],
-      level: '',
-      category: [''],
+      // tag: [''],
+      // level: '',
+      // category: [''],
       numberOfQuestion: 0,
       questions: [],
     }
   });
 
-  const { fields: tagFields, append: appendTag } = useFieldArray({ control, name: 'tag' });
-  const { fields: categoryFields, append: appendCategory } = useFieldArray({ control, name: 'category' });
+  // const { fields: tagFields, append: appendTag } = useFieldArray({ control, name: 'tag' });
+  // const { fields: categoryFields, append: appendCategory } = useFieldArray({ control, name: 'category' });
   const { fields: questionFields, append: appendQuestion, remove: removeQuestion } = useFieldArray({ control, name: 'questions' });
 
   const [prompt, setPrompt] = useState('');
@@ -32,7 +32,7 @@ function CreateAiQuiz() {
     try {
       const response = await axios.post('http://localhost:3000/api/v1/quiz/generate', { prompt });
       const quizData = response.data; // Expected format: { title, description, questions: [{ question, answerOptions, correctAnswer }] }
-
+      console.log(quizData);
       setValue('title', quizData.title || '');
       setValue('description', quizData.description || '');
       setValue('questions', quizData.questions || []);
@@ -91,7 +91,7 @@ function CreateAiQuiz() {
           {errors.description && <p>{errors.description.message}</p>}
         </div>
 
-        <div>
+        {/* <div>
           <label>Tags</label>
           {tagFields.map((item, index) => (
             <div key={item.id}>
@@ -99,9 +99,9 @@ function CreateAiQuiz() {
             </div>
           ))}
           <button type="button" onClick={() => appendTag('')}>Add Tag</button>
-        </div>
+        </div> */}
 
-        <div>
+        {/* <div>
           <label>Categories</label>
           {categoryFields.map((item, index) => (
             <div key={item.id}>
@@ -109,7 +109,7 @@ function CreateAiQuiz() {
             </div>
           ))}
           <button type="button" onClick={() => appendCategory('')}>Add Category</button>
-        </div>
+        </div> */}
 
         <div>
           <label>Questions</label>

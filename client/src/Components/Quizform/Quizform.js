@@ -10,9 +10,9 @@ function CreateQuiz() {
     defaultValues: {
       title: '',
       description: '',
-      tag: [''],
-      level: '',
-      category: [''],
+      // tag: [''],
+      // level: '',
+      // category: [''],
       numberOfQuestion: 0,
       questions: [{ question: '', answerOptions: ['', '', '', ''], correctAnswer: '', marks: 1 }],
     }
@@ -44,7 +44,7 @@ function CreateQuiz() {
         <input {...register('description', { required: 'Description is required' })} />
         {errors.description && <p>{errors.description.message}</p>}
       </div>
-
+{/* 
       <div>
         <label>Tags</label>
         {tagFields.map((item, index) => (
@@ -53,14 +53,14 @@ function CreateQuiz() {
           </div>
         ))}
         <button type="button" onClick={() => appendTag('')}>Add Tag</button>
-      </div>
-
+      </div> */}
+{/* 
       <div>
         <label>Level</label>
         <input {...register('level', { required: 'Level is required' })} />
         {errors.level && <p>{errors.level.message}</p>}
-      </div>
-
+      </div> */}
+{/* 
       <div>
         <label>Categories</label>
         {categoryFields.map((item, index) => (
@@ -71,7 +71,7 @@ function CreateQuiz() {
         <button type="button" onClick={() => appendCategory('')}>Add Category</button>
       </div>
 
-      
+       */}
 
       <div>
         <label>Questions</label>

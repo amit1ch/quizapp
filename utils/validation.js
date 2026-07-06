@@ -28,15 +28,15 @@ const CreateQuizSchema = z.object({
     .string({ required_error: "This Field is required" })
     .min(1, "This field is required"),
 
-  tag: z.array(
-    z.string({ required_error: "This Field is required" })
-      .min(1, "This field is required")
-  ),
+  // tag: z.array(
+  //   z.string({ required_error: "This Field is required" })
+  //     .min(1, "This field is required")
+  // ),
 
-  category: z.array(
-    z.string({ required_error: "This Field is required" })
-      .min(1, "This field is required")
-  ),
+  // category: z.array(
+  //   z.string({ required_error: "This Field is required" })
+  //     .min(1, "This field is required")
+  // ),
 
   // Questions are optional
   questions: z.array(

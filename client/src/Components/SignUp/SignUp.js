@@ -12,21 +12,30 @@ export default function SignUp() {
        try{ e.preventDefault();
 
         const response = await axios.post("http://localhost:3000/api/v1/user/register",formdata)
-      console.log(response.data);
+      console.log("kucch",response.data);
       if(response.status===201){
         navigate("/dashboard")
       }
 
-      else{
+  
 
-        alert("wrong info");
+
+    }catch (error) {
+        console.error("Registration error:", error);
+    
+        if (error.response) {
+          // Handle specific status codes
+          if (error.response.status === 409) {
+            alert("Registration failed: " + "User already exists.");
+          } else {
+            alert("Registration failed: " + (error.response.data.message || "User already exists."));
+          }
+        } else if (error.request) {
+          alert("Registration failed: No response from server. Please try again later.");
+        } else {
+          alert("Registration failed: " + error.message);
+        }
       }
-
-
-    }catch(error){
-        console.log(error)
-
-    }
 }
     const loginpage =()=>{
         navigate('/login');

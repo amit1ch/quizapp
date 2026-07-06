@@ -9,18 +9,18 @@ const QuizSchema = new mongoose.Schema({
         type: String,  
         required:true,
     },
-    tag: {
-        type: [String],  
-        required: true
-    },
-    level: {
-        type: String,  
-        required: true,
-    },
-    category:{
-        type:[String],
-        required:true,
-    },
+    // tag: {
+    //     type: [String],  
+    //     required: true
+    // },
+    // level: {
+    //     type: String,  
+    //     required: true,
+    // },
+    // category:{
+    //     type:[String],
+    //     required:true,
+    // },
 
     questions:
     [
